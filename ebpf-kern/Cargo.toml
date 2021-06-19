@@ -8,7 +8,7 @@ description = "Kernel space wrapper for libbpf"
 repository = "https://github.com/vlad9486/ebpf-tools"
 
 [dependencies]
-cty = "0.2"
+cty = { git = "https://github.com/lwintermelon/cty" }
 ebpf-kern-macros = { version = "0.1.4", path = "macros", optional = true }
 
 [features]

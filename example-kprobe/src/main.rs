@@ -32,8 +32,7 @@ fn main() -> Result<(), i32> {
     use std::{time::Duration, convert::TryFrom};
     use ebpf::{Skeleton, RingBufferRegistry};
 
-    static CODE: &[u8] = include_bytes!(concat!("../", env!("BPF_CODE")));
-
+    static CODE: &[u8] = include_bytes!("../../target/bpfel-unknown-none/release/example-kern");
     let mut skeleton = Skeleton::<App>::open("example-kprobe\0", CODE)?;
     skeleton.load()?;
     skeleton.attach()?;
